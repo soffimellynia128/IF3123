@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tugas Implementasi Interface</title>
+</head>
+<body>
+		<form name="formTugas" id="tugasku">
+		<input type="text" name="username" id="username" placeholder="Username" pattern=".{3,15}" oninvalid="this.setCustomValidity('Minimal 3huruf dan maximal 15 huruf')" required ><br>
+		<input type="password" name="password" id="pass" placeholder="Password" pattern="(?=^.{4,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[AZ])(?=.*[a-z]).*$" oninvalid="this.setCustomValidity('Password harus berupa simbol,kapital;& kecil, angka')" oninput="this.setCustomValidity('')" required><br>
+		<input type="password" name="repeat" id="repeat" placeholder="Ulangi Password" required><br>
+		<input type="text" name="email" id="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" oninvalid="this.setCustomValidity('Format EmailSalah')" oninput="this.setCustomValidity('')"required><br>
+		<input type=”Number” name=”telp” id=”telp” placeholder="Nomor Telepon" pattern="[0-9]{10,12}" oninvalid="this.setCustomValidity('Format Nomor harus 10 sampai 12 digit')" oninput="this.setCustomValidity('')" required><br>
+		<textarea id="alamat" style="width: 167px;" placeholder="Alamat " oninvalid="this.setCustomValidity('Alamat tidak boleh kosong')" oninput="this.setCustomValidity('')" required></textarea><br>
+		<input type="submit" name="" value="Submit" onclick="Validasi()" />
+		</form>
+<script type="text/javascript"> 
+	function Validasi(){
+	//VALIDASI PASSWORD//
+	var pass2=document.getElementById("pass").value;
+	var pass1=document.getElementById("repeat").value;
+	if(pass1!=pass2)
+
+document.getElementById("repeat").setCustomValidity("Passwords Tidak Sama, Coba Lagi");
+else
+
+document.getElementById("repeat").setCustomValidity('');
+}
+</script>
+</body>
+</html>
